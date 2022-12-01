@@ -1,7 +1,7 @@
 with open('day1-1.txt') as f:
     lines = f.readlines()
 
-print(lines)
+lines.append("\n")
 
 highest_count = 0
 current_count = 0
