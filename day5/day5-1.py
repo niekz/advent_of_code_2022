@@ -22,9 +22,6 @@ stacks = [
     ["S", "V", "F", "M", "R"]
 ]
 
-# Part 1
-
-
 def move_crate(from_stack, to_stack):
     to_stack.append(from_stack.pop())
 
