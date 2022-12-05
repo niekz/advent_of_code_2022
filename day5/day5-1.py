@@ -1,26 +1,20 @@
 with open('day5-1.txt') as f:
     lines = f.readlines()
 
-# TODO: Read in stacks from the file - below is a shortcut method
+n = 4
+temp_stacks = []
+stacks = []
+for line in lines[:8]:
+    line = [line[i:i+n].strip().replace("[", "").replace("]", "") for i in range(0, len(line), n)]
+    temp_stacks.append(line)
 
-# Sample stacks
-# stacks = [
-#     ["Z", "N"],    # Stack 1
-#     ["M", "C", "D"],    # Stack 2
-#     ["P"]    # Stack 3
-# ]
-
-stacks = [
-    ["D", "B", "J", "V"],
-    ["P", "V", "B", "W", "R", "D", "F"],
-    ["R", "G", "F", "L", "D", "C", "W", "Q"],
-    ["W", "J", "P", "M", "L", "N", "D", "B"],
-    ["H", "N", "B", "P", "C", "S", "Q"],
-    ["R", "D", "B", "S", "N", "G"],
-    ["Z", "B", "P", "M", "Q", "F", "S", "H"],
-    ["W", "L", "F"],
-    ["S", "V", "F", "M", "R"]
-]
+transposed_array = zip(*temp_stacks)
+for st in list(transposed_array):
+    temp = list(st)
+    while("" in temp):
+        temp.remove("")
+    temp.reverse()
+    stacks.append(temp)
 
 def move_crate(from_stack, to_stack):
     to_stack.append(from_stack.pop())

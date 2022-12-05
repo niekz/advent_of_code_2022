@@ -10,18 +10,20 @@ with open('day5-1.txt') as f:
 #     ["P"]    # Stack 3
 # ]
 
-stacks = [
-    ["D", "B", "J", "V"],
-    ["P", "V", "B", "W", "R", "D", "F"],
-    ["R", "G", "F", "L", "D", "C", "W", "Q"],
-    ["W", "J", "P", "M", "L", "N", "D", "B"],
-    ["H", "N", "B", "P", "C", "S", "Q"],
-    ["R", "D", "B", "S", "N", "G"],
-    ["Z", "B", "P", "M", "Q", "F", "S", "H"],
-    ["W", "L", "F"],
-    ["S", "V", "F", "M", "R"]
-]
+n = 4
+temp_stacks = []
+stacks = []
+for line in lines[:8]:
+    line = [line[i:i+n].strip().replace("[", "").replace("]", "") for i in range(0, len(line), n)]
+    temp_stacks.append(line)
 
+transposed_array = zip(*temp_stacks)
+for st in list(transposed_array):
+    temp = list(st)
+    while("" in temp):
+        temp.remove("")
+    temp.reverse()
+    stacks.append(temp)
 
 def move_n_crates(from_stack, to_stack, n_crates):
   temp_crates = []
