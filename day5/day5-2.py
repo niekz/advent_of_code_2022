@@ -37,6 +37,7 @@ def top_crate(stack):
 
 rearrangement = []
 
+# hard coded from where to read re-arrangements.
 for line in lines[10:]:
   split = line.strip().split()
   rearrangement.append((int(split[1]), int(split[3]), int(split[5])))
