@@ -1,8 +1,6 @@
 with open('day5-1.txt') as f:
     lines = f.readlines()
 
-# TODO: Read in stacks from the file - below is a shortcut method
-
 # Sample stacks
 # stacks = [
 #     ["Z", "N"],    # Stack 1
