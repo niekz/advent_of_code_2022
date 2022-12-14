@@ -1,4 +1,4 @@
-with open('test.txt') as f:
+with open('day14-1.txt') as f:
     lines = f.readlines()
 
 ranges = []
