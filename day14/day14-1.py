@@ -1,6 +1,3 @@
-import time
-start_time = time.time()
-
 with open('day14-1-sample.txt') as f:
     lines = f.readlines()
 
@@ -105,6 +102,3 @@ while not voiding:
 
 print(settled)
 # print(ranges)
-
-end_time = time.time()
-print(end_time - start_time)

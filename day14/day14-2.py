@@ -1,6 +1,3 @@
-import time
-start_time = time.time()
-
 with open('day14-1.txt') as f:
     lines = f.readlines()
 
@@ -122,7 +119,3 @@ while not voiding:
 # draw(grid)
 print(settled)
 # print(ranges)
-
-
-end_time = time.time()
-print(end_time - start_time)
