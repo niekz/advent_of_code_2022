@@ -1,3 +1,6 @@
+import time
+start_time = time.time()
+
 with open('day14-1.txt') as f:
     lines = f.readlines()
 
@@ -93,7 +96,7 @@ while not voiding:
                 # print("---")
                 # draw(grid) # draw the grid state
                 break
-            
+
         if can_move_down(grid, current_i, current_j):
             grid[current_i][current_j] = '.' # update the CURRENT block to be air
             current_i = current_i + 1 # fall one block
@@ -115,7 +118,11 @@ while not voiding:
                 # draw(grid)
             # draw(grid)
 
-grid[0][500] = 'o'
-draw(grid)
+# grid[0][500] = 'o'
+# draw(grid)
 print(settled)
 # print(ranges)
+
+
+end_time = time.time()
+print(end_time - start_time)
